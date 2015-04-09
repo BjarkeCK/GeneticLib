@@ -18,10 +18,7 @@ namespace GeneticLib
 
         public int PopulationSize { get { return _population.Count; } }
 
-        public T GetChromosome(int i)
-        {
-            return _population[i];
-        }
+        public T this[int index] { get { return _population[index]; } }
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
