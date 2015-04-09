@@ -51,7 +51,7 @@ namespace GeneticLib
 
         public void RandomizeGene(int geneIndex, double amount)
         {
-            _genes[geneIndex] = Math.Max(Math.Min(1, _genes[geneIndex] + GenerateGene() * amount), 0);
+            _genes[geneIndex] = Math.Max(Math.Min(1, _genes[geneIndex] + GenerateGene() * amount), -1);
         }
 
         public NeuralNetworkChromosome Clone()
@@ -88,7 +88,7 @@ namespace GeneticLib
 
         private double GenerateGene()
         {
-            return _random.NextDouble();
+            return 1 - _random.NextDouble() * 2;
         }
 
         public void OnEvolved()
